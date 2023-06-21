@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { MainLayout } from './app/layouts/MainLayout';
+import AuthProvider from './app/providers/auth/AuthProvider';
+import ModalContextProvider from './app/providers/modal/modalContext';
+import AppRouter from './app/providers/router/AppRouter';
+import { ConfigProvider } from 'antd';
+import { red } from '@ant-design/colors';
+import { store } from './app/store';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Provider store={store}>
+                <AuthProvider>
+                    <ConfigProvider
+                        theme={{
+                            token: {
+                                colorPrimary: red[5],
+                            },
+                        }}
+                    >
+                        <ModalContextProvider>
+                            <MainLayout>
+                                <AppRouter />
+                            </MainLayout>
+                        </ModalContextProvider>
+                    </ConfigProvider>
+                </AuthProvider>
+            </Provider>
+        </BrowserRouter>
+    );
 }
 
 export default App;

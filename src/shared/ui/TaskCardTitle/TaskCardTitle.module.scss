@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 0 5px;
+}
+
+.indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.title {
+
+}
+
+.first {
+  background-color: #be2020;
+}
+
+.second {
+  background-color: #c98b19;
+}
+
+.third {
+  background-color: #127e12;
+}

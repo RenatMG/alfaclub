@@ -1,0 +1,19 @@
+.error {
+  color: var(--red);
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.group {
+  margin-bottom: 15px;
+}
+
+.button {
+  background-color: var(--red);
+  &:hover {
+    background-color: var(--red) !important;
+  }
+}

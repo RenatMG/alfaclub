@@ -1,0 +1,9 @@
+export enum ActionType {
+    TASKS_FETCH = 'TASKS FETCH',
+    DELETE_TASK = 'DELETE TASK',
+    CREATE_TASK = ' TASK',
+    UPDATE_TASK = 'UPDATE TASK',
+    AUTHORS_FETCH = 'AUTHORS FETCH',
+}
+
+
